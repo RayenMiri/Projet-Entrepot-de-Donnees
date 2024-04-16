@@ -1,0 +1,1331 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/16/2024 10:23:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-PE2K018"
+  DTS:CreatorName="DESKTOP-PE2K018\GLADIATEUR-1650-8"
+  DTS:DTSID="{DFE4321B-55FD-48FA-B96D-44B4A1D1B077}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{4F23A248-6B72-4C37-9B9B-C89DE42EF38B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-PE2K018.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7F95EBF7-0BEE-411C-B2C9-C701F816D1DF}"
+      DTS:ObjectName="DESKTOP-PE2K018.master">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-PE2K018;Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{7F95EBF7-0BEE-411C-B2C9-C701F816D1DF}DESKTOP-PE2K018.master;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{FE67CE0E-86FF-4CE0-A8F8-961ACACBC1C5}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 4]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{404725BF-5EC1-466D-855B-CB1D9E5987E5}"
+      DTS:ObjectName="Excel Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Movies.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8938261D-2771-4CB5-9DE8-BB04C8FC7312}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\BooksDBDestination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="BooksDBDestination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[booksDB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BooksDBDestination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-PE2K018.master]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-PE2K018.master]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[index]"
+                      cachedDataType="r8"
+                      cachedName="index"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[index]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[index]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Publishing Year]"
+                      cachedDataType="r8"
+                      cachedName="Publishing Year"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Publishing Year]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Publishing Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Book Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Book Name"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Book Name]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Author]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Author"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Author]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Author]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[language_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="language_code"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[language_code]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[language_code]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Author_Rating]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Author_Rating"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Author_Rating]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Author_Rating]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Book_average_rating]"
+                      cachedDataType="r8"
+                      cachedName="Book_average_rating"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Book_average_rating]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book_average_rating]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Book_ratings_count]"
+                      cachedDataType="r8"
+                      cachedName="Book_ratings_count"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Book_ratings_count]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book_ratings_count]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[genre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="genre"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[genre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[gross sales]"
+                      cachedDataType="r8"
+                      cachedName="gross sales"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[gross sales]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[gross sales]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[publisher revenue]"
+                      cachedDataType="r8"
+                      cachedName="publisher revenue"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[publisher revenue]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[publisher revenue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[sale price]"
+                      cachedDataType="r8"
+                      cachedName="sale price"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[sale price]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[sale price]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[sales rank]"
+                      cachedDataType="r8"
+                      cachedName="sales rank"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[sales rank]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[sales rank]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[Publisher ]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Publisher "
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Publisher ]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Publisher ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].Columns[units sold]"
+                      cachedDataType="r8"
+                      cachedName="units sold"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[units sold]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[units sold]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[index]"
+                      dataType="r8"
+                      name="index" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Publishing Year]"
+                      dataType="r8"
+                      name="Publishing Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Book Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Book Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Author]"
+                      dataType="wstr"
+                      length="255"
+                      name="Author" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[language_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="language_code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Author_Rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Author_Rating" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Book_average_rating]"
+                      dataType="r8"
+                      name="Book_average_rating" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Book_ratings_count]"
+                      dataType="r8"
+                      name="Book_ratings_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
+                      dataType="wstr"
+                      length="255"
+                      name="genre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[gross sales]"
+                      dataType="r8"
+                      name="gross sales" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[publisher revenue]"
+                      dataType="r8"
+                      name="publisher revenue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[sale price]"
+                      dataType="r8"
+                      name="sale price" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[sales rank]"
+                      dataType="r8"
+                      name="sales rank" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Publisher ]"
+                      dataType="wstr"
+                      length="255"
+                      name="Publisher " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[units sold]"
+                      dataType="r8"
+                      name="units sold" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BooksDBDestination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BooksDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BooksDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\BooksExcelSource"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="BooksExcelSource"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\BooksExcelSource.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[index]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[index]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[index]"
+                      name="index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Publishing Year]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Publishing Year]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Publishing Year]"
+                      name="Publishing Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Book Name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book Name]"
+                      name="Book Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Author]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Author]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Author]"
+                      name="Author"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[language_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[language_code]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[language_code]"
+                      name="language_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Author_Rating]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Author_Rating]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Author_Rating]"
+                      name="Author_Rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book_average_rating]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Book_average_rating]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book_average_rating]"
+                      name="Book_average_rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book_ratings_count]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Book_ratings_count]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Book_ratings_count]"
+                      name="Book_ratings_count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[genre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[genre]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[genre]"
+                      name="genre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[gross sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[gross sales]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[gross sales]"
+                      name="gross sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[publisher revenue]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[publisher revenue]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[publisher revenue]"
+                      name="publisher revenue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[sale price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[sale price]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[sale price]"
+                      name="sale price"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[sales rank]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[sales rank]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[sales rank]"
+                      name="sales rank"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Publisher ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Publisher ]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[Publisher ]"
+                      name="Publisher "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[units sold]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[units sold]"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].Columns[units sold]"
+                      name="units sold"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[index]"
+                      dataType="r8"
+                      name="index" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Publishing Year]"
+                      dataType="r8"
+                      name="Publishing Year" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Book Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Book Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Author]"
+                      dataType="wstr"
+                      length="255"
+                      name="Author" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[language_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="language_code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Author_Rating]"
+                      dataType="wstr"
+                      length="255"
+                      name="Author_Rating" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Book_average_rating]"
+                      dataType="r8"
+                      name="Book_average_rating" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Book_ratings_count]"
+                      dataType="r8"
+                      name="Book_ratings_count" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[genre]"
+                      dataType="wstr"
+                      length="255"
+                      name="genre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[gross sales]"
+                      dataType="r8"
+                      name="gross sales" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[publisher revenue]"
+                      dataType="r8"
+                      name="publisher revenue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[sale price]"
+                      dataType="r8"
+                      name="sale price" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[sales rank]"
+                      dataType="r8"
+                      name="sales rank" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[Publisher ]"
+                      dataType="wstr"
+                      length="255"
+                      name="Publisher " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output].ExternalColumns[units sold]"
+                      dataType="r8"
+                      name="units sold" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[index]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[index]"
+                      name="index" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Publishing Year]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Publishing Year]"
+                      name="Publishing Year" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Book Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Book Name]"
+                      name="Book Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Author]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Author]"
+                      name="Author" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[language_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[language_code]"
+                      name="language_code" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Author_Rating]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Author_Rating]"
+                      name="Author_Rating" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Book_average_rating]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Book_average_rating]"
+                      name="Book_average_rating" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Book_ratings_count]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Book_ratings_count]"
+                      name="Book_ratings_count" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[genre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[genre]"
+                      name="genre" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[gross sales]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[gross sales]"
+                      name="gross sales" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[publisher revenue]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[publisher revenue]"
+                      name="publisher revenue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[sale price]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[sale price]"
+                      name="sale price" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[sales rank]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[sales rank]"
+                      name="sales rank" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Publisher ]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[Publisher ]"
+                      name="Publisher " />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[units sold]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[units sold]"
+                      name="units sold" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\MoviesDBDestination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="MoviesDBDestination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[MoviesDB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\MoviesDBDestination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-PE2K018.master]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-PE2K018.master]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[F1]"
+                      cachedDataType="r8"
+                      cachedName="F1"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[F1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Movie Info]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Movie Info"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Movie Info]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Movie Info]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Distributor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Distributor"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Distributor]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Distributor]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Release Date]"
+                      cachedDataType="date"
+                      cachedName="Release Date"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Release Date]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Release Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Domestic Sales (in $)]"
+                      cachedDataType="r8"
+                      cachedName="Domestic Sales (in $)"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Domestic Sales (in $)]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Domestic Sales (in $)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[International Sales (in $)]"
+                      cachedDataType="r8"
+                      cachedName="International Sales (in $)"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[International Sales (in $)]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[International Sales (in $)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[World Sales (in $)]"
+                      cachedDataType="r8"
+                      cachedName="World Sales (in $)"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[World Sales (in $)]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[World Sales (in $)]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Genre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Genre"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Genre]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Genre]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[Movie Runtime]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Movie Runtime"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Movie Runtime]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Movie Runtime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].Columns[License]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="License"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[License]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[License]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[F1]"
+                      dataType="r8"
+                      name="F1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Movie Info]"
+                      dataType="wstr"
+                      length="255"
+                      name="Movie Info" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Distributor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Distributor" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Release Date]"
+                      dataType="dbTimeStamp"
+                      name="Release Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Domestic Sales (in $)]"
+                      dataType="r8"
+                      name="Domestic Sales (in $)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[International Sales (in $)]"
+                      dataType="r8"
+                      name="International Sales (in $)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[World Sales (in $)]"
+                      dataType="r8"
+                      name="World Sales (in $)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Genre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Genre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[Movie Runtime]"
+                      dataType="wstr"
+                      length="255"
+                      name="Movie Runtime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input].ExternalColumns[License]"
+                      dataType="wstr"
+                      length="255"
+                      name="License" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\MoviesDBDestination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\MoviesDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\MoviesDBDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\MoviesExcelSource"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="MoviesExcelSource"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\MoviesExcelSource.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 4]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[F1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[F1]"
+                      name="F1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Title]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Movie Info]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Movie Info]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Movie Info]"
+                      name="Movie Info"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Distributor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Distributor]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Distributor]"
+                      name="Distributor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Release Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Release Date]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Release Date]"
+                      name="Release Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Domestic Sales (in $)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Domestic Sales (in $)]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Domestic Sales (in $)]"
+                      name="Domestic Sales (in $)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[International Sales (in $)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[International Sales (in $)]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[International Sales (in $)]"
+                      name="International Sales (in $)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[World Sales (in $)]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[World Sales (in $)]"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[World Sales (in $)]"
+                      name="World Sales (in $)"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Genre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Genre]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Genre]"
+                      name="Genre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Movie Runtime]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Movie Runtime]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[Movie Runtime]"
+                      name="Movie Runtime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[License]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[License]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].Columns[License]"
+                      name="License"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      dataType="r8"
+                      name="F1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Movie Info]"
+                      dataType="wstr"
+                      length="255"
+                      name="Movie Info" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Distributor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Distributor" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Release Date]"
+                      dataType="date"
+                      name="Release Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Domestic Sales (in $)]"
+                      dataType="r8"
+                      name="Domestic Sales (in $)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[International Sales (in $)]"
+                      dataType="r8"
+                      name="International Sales (in $)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[World Sales (in $)]"
+                      dataType="r8"
+                      name="World Sales (in $)" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Genre]"
+                      dataType="wstr"
+                      length="255"
+                      name="Genre" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[Movie Runtime]"
+                      dataType="wstr"
+                      length="255"
+                      name="Movie Runtime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output].ExternalColumns[License]"
+                      dataType="wstr"
+                      length="255"
+                      name="License" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[F1]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[F1]"
+                      name="F1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Movie Info]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Movie Info]"
+                      name="Movie Info" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Distributor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Distributor]"
+                      name="Distributor" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Release Date]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Release Date]"
+                      name="Release Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Domestic Sales (in $)]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Domestic Sales (in $)]"
+                      name="Domestic Sales (in $)" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[International Sales (in $)]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[International Sales (in $)]"
+                      name="International Sales (in $)" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[World Sales (in $)]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[World Sales (in $)]"
+                      name="World Sales (in $)" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Genre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Genre]"
+                      name="Genre" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Movie Runtime]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[Movie Runtime]"
+                      name="Movie Runtime" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[License]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[License]"
+                      name="License" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Excel Source Output]"
+              endId="Package\Data Flow Task\MoviesDBDestination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Data Flow Task\MoviesExcelSource.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Excel Source Output1]"
+              endId="Package\Data Flow Task\BooksDBDestination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Data Flow Task\BooksExcelSource.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="271,104" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\BooksExcelSource"
+          TopLeft="247,85" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Data Flow Task\MoviesDBDestination"
+          TopLeft="497,183" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow Task\MoviesExcelSource"
+          TopLeft="501,87" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\BooksDBDestination"
+          TopLeft="240,181" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="589,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Excel Source Output1]"
+          TopLeft="331.25,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

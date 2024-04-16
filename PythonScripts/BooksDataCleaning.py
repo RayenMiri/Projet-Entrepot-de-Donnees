@@ -1,12 +1,12 @@
 import pandas as pd
 
 # Load the data from an Excel file in the same directory as the script
-df = pd.read_excel('Books.xlsx')  # or 'latin1', 'iso-8859-1', 'cp1252' as needed
+df = pd.read_excel('./Data/Books.xlsx')  # or 'latin1', 'iso-8859-1', 'cp1252' as needed
 
 # Data cleaning steps
 
 # 1. Remove rows with missing values in essential columns
-essential_columns = ['Book Name', 'Author', 'Book_average_rating', 'genre', 'gross sales', 'publisher revenue', 'units sold']
+essential_columns = ['Author_Rating','Book Name', 'Author', 'Book_average_rating', 'genre', 'gross sales', 'publisher revenue', 'units sold']
 df_cleaned = df.dropna(subset=essential_columns).copy()  # Use .copy() to avoid SettingWithCopyWarning
 
 # 2. Clean the 'Publishing Year' column
@@ -22,7 +22,7 @@ pattern = r'[^\w\s:]'
 
 df_cleaned = df_cleaned[~df_cleaned['book_name'].astype(str).str.contains(pattern, na=False)]
 # 5. Convert numeric columns to appropriate data types
-numeric_columns = ['author_rating', 'book_average_rating', 'book_ratings_count', 'gross_sales', 'publisher_revenue', 'sale_price', 'sales_rank', 'units_sold']
+numeric_columns = ['book_average_rating', 'book_ratings_count', 'gross_sales', 'publisher_revenue', 'sale_price', 'sales_rank', 'units_sold']
 for col in numeric_columns:
     df_cleaned.loc[:, col] = pd.to_numeric(df_cleaned[col], errors='coerce')
 
