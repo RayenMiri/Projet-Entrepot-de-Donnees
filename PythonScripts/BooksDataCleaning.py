@@ -6,8 +6,8 @@ df = pd.read_excel('./Data/Books.xlsx')  # or 'latin1', 'iso-8859-1', 'cp1252' a
 # Data cleaning steps
 
 # 1. Remove rows with missing values in essential columns
-essential_columns = ['Author_Rating','Book Name', 'Author', 'Book_average_rating', 'genre', 'gross sales', 'publisher revenue', 'units sold']
-df_cleaned = df.dropna(subset=essential_columns).copy()  # Use .copy() to avoid SettingWithCopyWarning
+essential_columns = ['language_code','Author_Rating','Book Name', 'Author', 'Book_average_rating', 'genre', 'gross sales', 'publisher revenue', 'units sold']
+df_cleaned = df.dropna(subset=essential_columns).copy() 
 
 # 2. Clean the 'Publishing Year' column
 # Convert 'Publishing Year' to integers, handle incorrect values
