@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{53E9F06B-E0F4-4D05-955A-CAF421B29309}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{07D0DA28-4757-4946-8FBA-6225C7D6AA27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3841,90 +3841,6 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175,42"
-          Id="Package\DimVGStagingData"
-          TopLeft="493,140.5" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="333,1.5" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Loading VG File"
-          TopLeft="336.75,66" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\VGsSalesFacts"
-          TopLeft="375,340" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="503,22.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-8.25,64.5"
-              Start="0,0"
-              End="-0.75,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,60.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,60.5"
-                    Point2="22.5,64.5"
-                    Point3="18.5,64.5" />
-                  <mssgle:LineSegment
-                    End="-0.75,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="415.75,108">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="164.75,32.5"
-              Start="0,0"
-              End="164.75,25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.25"
-                    Point2="0,16.25"
-                    Point3="4,16.25" />
-                  <mssgle:LineSegment
-                    End="160.75,16.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="160.75,16.25"
-                    Point2="164.75,16.25"
-                    Point3="164.75,20.25" />
-                  <mssgle:LineSegment
-                    End="164.75,25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="151,42"
           Id="Package\DimensionsContainer\VGsDimGenre"
           TopLeft="5.5,5.5" />
@@ -3947,6 +3863,56 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
           Size="718,100"
           Id="Package\DimensionsContainer"
           TopLeft="134,212" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DimVGStagingData"
+          TopLeft="493,140.5" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="333,1.5" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Loading VG File"
+          TopLeft="335.75,66" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\VGsSalesFacts"
+          TopLeft="375,340" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="503,22.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.25,64.5"
+              Start="0,0"
+              End="-1.75,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,60.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,60.5"
+                    Point2="22.5,64.5"
+                    Point3="18.5,64.5" />
+                  <mssgle:LineSegment
+                    End="-1.75,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="580.5,182.5">
@@ -4015,9 +3981,494 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="414.75,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="165.75,32.5"
+              Start="0,0"
+              End="165.75,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.25"
+                    Point2="0,16.25"
+                    Point3="4,16.25" />
+                  <mssgle:LineSegment
+                    End="161.75,16.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.75,16.25"
+                    Point2="165.75,16.25"
+                    Point3="165.75,20.25" />
+                  <mssgle:LineSegment
+                    End="165.75,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\DimensionsContainer\VGsDimGenre">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DimensionsContainer\VGsDimGenre\RemoveDuplicates"
+          TopLeft="211,151" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\VGsDimGenre\OLE DB Destination"
+          TopLeft="400,249" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimensionsContainer\VGsDimGenre\OLE DB Source"
+          TopLeft="398,57" />
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsDimGenre.Paths[Sort Output]"
+          TopLeft="296.5,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192,56"
+              Start="0,0"
+              End="192,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="188,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="188,28"
+                    Point2="192,28"
+                    Point3="192,32" />
+                  <mssgle:LineSegment
+                    End="192,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsDimGenre.Paths[OLE DB Source Output]"
+          TopLeft="476.5,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-180,52"
+              Start="0,0"
+              End="-180,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-176,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-176,26"
+                    Point2="-180,26"
+                    Point3="-180,30" />
+                  <mssgle:LineSegment
+                    End="-180,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsDimGenre\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsDimGenre\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimensionsContainer\VGsDimPlatfrom">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DimensionsContainer\VGsDimPlatfrom\RemoveDuplicates"
+          TopLeft="189,131" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Destination"
+          TopLeft="404,252" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Source"
+          TopLeft="384,52" />
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsDimPlatfrom.Paths[Sort Output]"
+          TopLeft="274.5,173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218,79"
+              Start="0,0"
+              End="218,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="214,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="214,39.5"
+                    Point2="218,39.5"
+                    Point3="218,43.5" />
+                  <mssgle:LineSegment
+                    End="218,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsDimPlatfrom.Paths[OLE DB Source Output]"
+          TopLeft="462.5,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-188,37"
+              Start="0,0"
+              End="-188,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-184,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-184,18.5"
+                    Point2="-188,18.5"
+                    Point3="-188,22.5" />
+                  <mssgle:LineSegment
+                    End="-188,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimensionsContainer\VGsDimPublisher">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DimensionsContainer\VGsDimPublisher\RemoveDuplicates"
+          TopLeft="299,147" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\VGsDimPublisher\OLE DB Destination"
+          TopLeft="428,242" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimensionsContainer\VGsDimPublisher\OLE DB Source"
+          TopLeft="436,70" />
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsDimPublisher.Paths[Sort Output]"
+          TopLeft="384.5,189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132,53"
+              Start="0,0"
+              End="132,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="128,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="128,26.5"
+                    Point2="132,26.5"
+                    Point3="132,30.5" />
+                  <mssgle:LineSegment
+                    End="132,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsDimPublisher.Paths[OLE DB Source Output]"
+          TopLeft="514.5,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-130,35"
+              Start="0,0"
+              End="-130,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="-4,17.5" />
+                  <mssgle:LineSegment
+                    End="-126,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126,17.5"
+                    Point2="-130,17.5"
+                    Point3="-130,21.5" />
+                  <mssgle:LineSegment
+                    End="-130,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsDimPublisher\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsDimPublisher\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimensionsContainer\VGsPublishingYear">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DimensionsContainer\VGsPublishingYear\RemoveDuplicates"
+          TopLeft="247,137" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\VGsPublishingYear\OLE DB Destination"
+          TopLeft="416,239" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimensionsContainer\VGsPublishingYear\OLE DB Source"
+          TopLeft="435,31" />
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsPublishingYear.Paths[Sort Output]"
+          TopLeft="332.5,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172,60"
+              Start="0,0"
+              End="172,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="168,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168,30"
+                    Point2="172,30"
+                    Point3="172,34" />
+                  <mssgle:LineSegment
+                    End="172,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\VGsPublishingYear.Paths[OLE DB Source Output]"
+          TopLeft="513.5,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-181,64"
+              Start="0,0"
+              End="-181,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="-4,32" />
+                  <mssgle:LineSegment
+                    End="-177,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-177,32"
+                    Point2="-181,32"
+                    Point3="-181,36" />
+                  <mssgle:LineSegment
+                    End="-181,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsPublishingYear\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\VGsPublishingYear\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DimVGStagingData">
     <LayoutInfo>
@@ -4088,6 +4539,10 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="168,42"
+          Id="Package\Loading VG File\RemoveNullYears"
+          TopLeft="453,191" />
+        <NodeLayout
           Size="213,42"
           Id="Package\Loading VG File\VideoGamesDBDestination"
           TopLeft="271,274" />
@@ -4133,10 +4588,40 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Loading VG File\RemoveNullYears"
-          TopLeft="453,191" />
+        <EdgeLayout
+          Id="Package\Loading VG File.Paths[Sort Output]"
+          TopLeft="305.5,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="231.5,32"
+              Start="0,0"
+              End="231.5,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
+                  <mssgle:LineSegment
+                    End="227.5,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="227.5,16"
+                    Point2="231.5,16"
+                    Point3="231.5,20" />
+                  <mssgle:LineSegment
+                    End="231.5,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Loading VG File.Paths[Not Null Year]"
           TopLeft="537,233">
@@ -4173,40 +4658,6 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loading VG File.Paths[Sort Output]"
-          TopLeft="305.5,159">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="231.5,32"
-              Start="0,0"
-              End="231.5,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12"
-                    Point2="0,16"
-                    Point3="4,16" />
-                  <mssgle:LineSegment
-                    End="227.5,16" />
-                  <mssgle:CubicBezierSegment
-                    Point1="227.5,16"
-                    Point2="231.5,16"
-                    Point3="231.5,20" />
-                  <mssgle:LineSegment
-                    End="231.5,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4237,352 +4688,14 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DimensionsContainer\VGsDimGenre">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\VGsDimGenre\OLE DB Destination"
-          TopLeft="400,249" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\VGsDimGenre\OLE DB Source"
-          TopLeft="398,57" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DimensionsContainer\VGsDimGenre\RemoveDuplicates"
-          TopLeft="211,151" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsDimGenre.Paths[OLE DB Source Output]"
-          TopLeft="476.5,99">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-180,52"
-              Start="0,0"
-              End="-180,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
-                  <mssgle:LineSegment
-                    End="-176,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-176,26"
-                    Point2="-180,26"
-                    Point3="-180,30" />
-                  <mssgle:LineSegment
-                    End="-180,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsDimGenre.Paths[Sort Output]"
-          TopLeft="296.5,193">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="192,56"
-              Start="0,0"
-              End="192,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
-                  <mssgle:LineSegment
-                    End="188,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="188,28"
-                    Point2="192,28"
-                    Point3="192,32" />
-                  <mssgle:LineSegment
-                    End="192,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsDimGenre\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsDimGenre\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DimensionsContainer\VGsDimPlatfrom">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Destination"
-          TopLeft="404,252" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Source"
-          TopLeft="384,52" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DimensionsContainer\VGsDimPlatfrom\RemoveDuplicates"
-          TopLeft="189,131" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsDimPlatfrom.Paths[OLE DB Source Output]"
-          TopLeft="462.5,94">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-188,37"
-              Start="0,0"
-              End="-188,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="-4,18.5" />
-                  <mssgle:LineSegment
-                    End="-184,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-184,18.5"
-                    Point2="-188,18.5"
-                    Point3="-188,22.5" />
-                  <mssgle:LineSegment
-                    End="-188,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsDimPlatfrom.Paths[Sort Output]"
-          TopLeft="274.5,173">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="218,79"
-              Start="0,0"
-              End="218,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
-                  <mssgle:LineSegment
-                    End="214,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="214,39.5"
-                    Point2="218,39.5"
-                    Point3="218,43.5" />
-                  <mssgle:LineSegment
-                    End="218,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsDimPlatfrom\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DimensionsContainer\VGsDimPublisher">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\VGsDimPublisher\OLE DB Destination"
-          TopLeft="428,242" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\VGsDimPublisher\OLE DB Source"
-          TopLeft="436,70" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DimensionsContainer\VGsDimPublisher\RemoveDuplicates"
-          TopLeft="299,147" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsDimPublisher.Paths[OLE DB Source Output]"
-          TopLeft="514.5,112">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-130,35"
-              Start="0,0"
-              End="-130,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.5"
-                    Point2="0,17.5"
-                    Point3="-4,17.5" />
-                  <mssgle:LineSegment
-                    End="-126,17.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-126,17.5"
-                    Point2="-130,17.5"
-                    Point3="-130,21.5" />
-                  <mssgle:LineSegment
-                    End="-130,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsDimPublisher.Paths[Sort Output]"
-          TopLeft="384.5,189">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="132,53"
-              Start="0,0"
-              End="132,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="128,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="128,26.5"
-                    Point2="132,26.5"
-                    Point3="132,30.5" />
-                  <mssgle:LineSegment
-                    End="132,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsDimPublisher\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsDimPublisher\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\VGsSalesFacts">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="99,42"
+          Id="Package\VGsSalesFacts\Sort"
+          TopLeft="296,111" />
         <NodeLayout
           Size="177,42"
           Id="Package\VGsSalesFacts\OLE DB Destination"
@@ -4591,44 +4704,6 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
           Size="157,42"
           Id="Package\VGsSalesFacts\OLE DB Source"
           TopLeft="428,35" />
-        <NodeLayout
-          Size="99,42"
-          Id="Package\VGsSalesFacts\Sort"
-          TopLeft="296,111" />
-        <EdgeLayout
-          Id="Package\VGsSalesFacts.Paths[OLE DB Source Output]"
-          TopLeft="506.5,77">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-161,34"
-              Start="0,0"
-              End="-161,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="-4,17" />
-                  <mssgle:LineSegment
-                    End="-157,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-157,17"
-                    Point2="-161,17"
-                    Point3="-161,21" />
-                  <mssgle:LineSegment
-                    End="-161,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\VGsSalesFacts.Paths[Sort Output]"
           TopLeft="345.5,153">
@@ -4663,6 +4738,40 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\VGsSalesFacts.Paths[OLE DB Source Output]"
+          TopLeft="506.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-161,34"
+              Start="0,0"
+              End="-161,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-157,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-157,17"
+                    Point2="-161,17"
+                    Point3="-161,21" />
+                  <mssgle:LineSegment
+                    End="-161,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4684,115 +4793,6 @@ AND V.VG_Publishing_Year = VY.Publishing_Year</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DimensionsContainer\VGsPublishingYear">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\VGsPublishingYear\OLE DB Source"
-          TopLeft="435,31" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\VGsPublishingYear\OLE DB Destination"
-          TopLeft="416,239" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DimensionsContainer\VGsPublishingYear\RemoveDuplicates"
-          TopLeft="247,137" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsPublishingYear.Paths[OLE DB Source Output]"
-          TopLeft="513.5,73">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-181,64"
-              Start="0,0"
-              End="-181,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="-4,32" />
-                  <mssgle:LineSegment
-                    End="-177,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-177,32"
-                    Point2="-181,32"
-                    Point3="-181,36" />
-                  <mssgle:LineSegment
-                    End="-181,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionsContainer\VGsPublishingYear.Paths[Sort Output]"
-          TopLeft="332.5,179">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="172,60"
-              Start="0,0"
-              End="172,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
-                  <mssgle:LineSegment
-                    End="168,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="168,30"
-                    Point2="172,30"
-                    Point3="172,34" />
-                  <mssgle:LineSegment
-                    End="172,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsPublishingYear\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\VGsPublishingYear\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

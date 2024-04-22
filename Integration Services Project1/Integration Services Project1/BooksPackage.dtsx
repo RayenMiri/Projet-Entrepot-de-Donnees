@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="BooksPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="271"
-  DTS:VersionGUID="{8B69BBA1-F152-4F4A-A165-37E5CAFA18A9}">
+  DTS:VersionBuild="283"
+  DTS:VersionGUID="{48A102F0-68AA-4D48-B4B0-F9D9492095F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -61,7 +61,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -85,7 +85,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\GLADIATEUR-1650-8\ProjetEntrepot\Data\Books.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -777,7 +777,8 @@ ORDER BY Author_Name;</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Inputs[Aggregate Input 1].Columns[Language_Description]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="255"
                           cachedName="Language_Description"
                           lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source.Outputs[OLE DB Source Output].Columns[Language_Description]" />
@@ -803,7 +804,8 @@ ORDER BY Author_Name;</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Outputs[Aggregate Output 1].Columns[Language_Description]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="255"
                           lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Outputs[Aggregate Output 1].Columns[Language_Description]"
                           name="Language_Description">
@@ -834,6 +836,84 @@ ORDER BY Author_Name;</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Inputs[Data Conversion Input].Columns[Language_Description]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="Language_Description"
+                          lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Outputs[Aggregate Output 1].Columns[Language_Description]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Language_Description]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Language_Description]"
+                          name="Copy of Language_Description"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Outputs[Aggregate Output 1].Columns[Language_Description]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\BooksDimensionsContainer\BooksDimLanguages\Derived Column"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -848,7 +928,8 @@ ORDER BY Author_Name;</property>
                       <inputColumns>
                         <inputColumn
                           refId="Package\BooksDimensionsContainer\BooksDimLanguages\Derived Column.Inputs[Derived Column Input].Columns[Language_Description]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="255"
                           cachedName="Language_Description"
                           errorOrTruncationOperation="Computation"
@@ -981,12 +1062,12 @@ ORDER BY Author_Name;</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Language_Description]"
+                          refId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Language_Description]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="Language_Description"
+                          cachedName="Copy of Language_Description"
                           externalMetadataColumnId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Description]"
-                          lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Outputs[Aggregate Output 1].Columns[Language_Description]" />
+                          lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Language_Description]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1090,7 +1171,8 @@ ORDER BY Author_Name;</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source.Outputs[OLE DB Source Output].Columns[Language_Description]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Language_Description]"
@@ -1103,7 +1185,8 @@ ORDER BY Author_Name;</property>
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Language_Description]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="255"
                           name="Language_Description" />
                       </externalMetadataColumns>
@@ -1127,7 +1210,8 @@ ORDER BY Author_Name;</property>
                           specialFlags="2" />
                         <outputColumn
                           refId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Language_Description]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="255"
                           lineageId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Language_Description]"
                           name="Language_Description" />
@@ -1140,9 +1224,14 @@ ORDER BY Author_Name;</property>
               <paths>
                 <path
                   refId="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Aggregate Output 1]"
-                  endId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Inputs[Data Conversion Input]"
                   name="Aggregate Output 1"
                   startId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Outputs[Aggregate Output 1]" />
+                <path
+                  refId="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Data Conversion Output]"
+                  endId="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Derived Column Output]"
                   endId="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate.Inputs[Aggregate Input 1]"
@@ -1868,6 +1957,24 @@ ORDER BY Author_Name;</property>
                       cachedName="Publishing_Year_ID"
                       externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Publishing_Year_ID]"
                       lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Publishing_Year_ID]" />
+                    <inputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Author_ID]"
+                      cachedDataType="i4"
+                      cachedName="Author_ID"
+                      externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Author_ID]"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Author_ID]" />
+                    <inputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Genre_ID]"
+                      cachedDataType="i4"
+                      cachedName="Genre_ID"
+                      externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genre_ID]"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Genre_ID]" />
+                    <inputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Language_Code]"
+                      cachedDataType="i4"
+                      cachedName="Language_Code"
+                      externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Code]"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Language_Code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1907,6 +2014,18 @@ ORDER BY Author_Name;</property>
                       refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Publishing_Year_ID]"
                       dataType="i4"
                       name="Publishing_Year_ID" />
+                    <externalMetadataColumn
+                      refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Author_ID]"
+                      dataType="i4"
+                      name="Author_ID" />
+                    <externalMetadataColumn
+                      refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genre_ID]"
+                      dataType="i4"
+                      name="Genre_ID" />
+                    <externalMetadataColumn
+                      refId="Package\BooksSalesFacts\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Code]"
+                      dataType="i4"
+                      name="Language_Code" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1960,11 +2079,15 @@ ORDER BY Author_Name;</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT BDB.Book_ID ,BDimP.Publisher_ID,Publishing_Year_ID  ,BDB.Gross_Sales , BDB.Publisher_Revenue , BDB.Sale_Price , BDB.Sales_Rank , BDB.Units_Sold
-FROM BooksDimension as BDim , BooksDB as BDB , BooksDimPublishers as BDimP , BooksDimPublishingYear as BDY
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT BDim.Book_ID ,BDimP.Publisher_ID,Publishing_Year_ID,Author_ID, Genre_ID ,BL.Language_Code ,BDB.Gross_Sales , BDB.Publisher_Revenue , BDB.Sale_Price , BDB.Sales_Rank , BDB.Units_Sold
+FROM BooksDimension as BDim , BooksDB as BDB , BooksDimPublishers as BDimP , BooksDimPublishingYear as BDY , BooksDimAuthors as BA ,BooksDimGenres AS BG , BooksDimLanguages as BL
 WHERE BDB.publisher = BDimP.Publisher_Name 
 AND BDB.publishing_year = BDY.Publishing_Year 
-AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
+AND BDim.Book_ID = BDB.Book_ID 
+AND BDim.Author_Name = BA.Author_Name
+AND BDim.Genre_Name = BG.Genre_Name
+AND BDim.Language_Description = BL.Language_Description
+order by Gross_Sales desc</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2072,6 +2195,33 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Publishing_Year_ID]"
                       name="Publishing_Year_ID"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Author_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Author_ID]"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Author_ID]"
+                      name="Author_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Genre_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Genre_ID]"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Genre_ID]"
+                      name="Genre_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Language_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Language_Code]"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].Columns[Language_Code]"
+                      name="Language_Code"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2107,6 +2257,18 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Publishing_Year_ID]"
                       dataType="i4"
                       name="Publishing_Year_ID" />
+                    <externalMetadataColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Author_ID]"
+                      dataType="i4"
+                      name="Author_ID" />
+                    <externalMetadataColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Genre_ID]"
+                      dataType="i4"
+                      name="Genre_ID" />
+                    <externalMetadataColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Language_Code]"
+                      dataType="i4"
+                      name="Language_Code" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2129,6 +2291,21 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       dataType="i4"
                       lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Publishing_Year_ID]"
                       name="Publishing_Year_ID" />
+                    <outputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Author_ID]"
+                      dataType="i4"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Author_ID]"
+                      name="Author_ID" />
+                    <outputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Genre_ID]"
+                      dataType="i4"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Genre_ID]"
+                      name="Genre_ID" />
+                    <outputColumn
+                      refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Language_Code]"
+                      dataType="i4"
+                      lineageId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Language_Code]"
+                      name="Language_Code" />
                     <outputColumn
                       refId="Package\BooksSalesFacts\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gross_Sales]"
                       dataType="r8"
@@ -2196,6 +2373,84 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\DimBooksStagingData\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimBooksStagingData\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimBooksStagingData\Data Conversion.Inputs[Data Conversion Input].Columns[language_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="language_code"
+                      lineageId="Package\DimBooksStagingData\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DimBooksStagingData\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of language_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of language_code]"
+                      name="Copy of language_code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DimBooksStagingData\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DimBooksStagingData\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\DimBooksStagingData\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
@@ -2315,13 +2570,6 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       externalMetadataColumnId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Genre_Name]"
                       lineageId="Package\DimBooksStagingData\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]" />
                     <inputColumn
-                      refId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[language_code]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="language_code"
-                      externalMetadataColumnId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Description]"
-                      lineageId="Package\DimBooksStagingData\OLE DB Source.Outputs[OLE DB Source Output].Columns[language_code]" />
-                    <inputColumn
                       refId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[publisher]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -2334,6 +2582,14 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       cachedName="Book_ID"
                       externalMetadataColumnId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Book_ID]"
                       lineageId="Package\DimBooksStagingData\OLE DB Source.Outputs[OLE DB Source Output].Columns[Book_ID]" />
+                    <inputColumn
+                      refId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of language_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of language_code"
+                      externalMetadataColumnId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Description]"
+                      lineageId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of language_code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2361,11 +2617,6 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       dataType="i4"
                       name="Publishing_Year" />
                     <externalMetadataColumn
-                      refId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Description]"
-                      dataType="wstr"
-                      length="255"
-                      name="Language_Description" />
-                    <externalMetadataColumn
                       refId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Book_Average_Rating]"
                       dataType="r8"
                       name="Book_Average_Rating" />
@@ -2383,6 +2634,12 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
                       dataType="wstr"
                       length="255"
                       name="publisher" />
+                    <externalMetadataColumn
+                      refId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Language_Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Language_Description" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2790,8 +3047,13 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
           </components>
           <paths>
             <path
-              refId="Package\DimBooksStagingData.Paths[OLE DB Source Output]"
+              refId="Package\DimBooksStagingData.Paths[Data Conversion Output]"
               endId="Package\DimBooksStagingData\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DimBooksStagingData\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DimBooksStagingData.Paths[OLE DB Source Output]"
+              endId="Package\DimBooksStagingData\Data Conversion.Inputs[Data Conversion Input]"
               name="OLE DB Source Output"
               startId="Package\DimBooksStagingData\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -3979,6 +4241,33 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="167,42"
+          Id="Package\BooksDimensionsContainer\BooksDimAuthors"
+          TopLeft="5.5,6.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\BooksDimensionsContainer\BooksDimGenres"
+          TopLeft="375.5,9.5" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages"
+          TopLeft="548.5,10.5" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\BooksDimensionsContainer\BooksDimPublishers"
+          TopLeft="184.5,8.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear"
+          TopLeft="734,10" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="942,58"
+          Size="942,101"
+          Id="Package\BooksDimensionsContainer"
+          TopLeft="7,239" />
+        <NodeLayout
           Size="164,42"
           Id="Package\BooksSalesFacts"
           TopLeft="555,373" />
@@ -4062,33 +4351,6 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\BooksDimensionsContainer\BooksDimAuthors"
-          TopLeft="5.5,6.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\BooksDimensionsContainer\BooksDimGenres"
-          TopLeft="375.5,9.5" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages"
-          TopLeft="548.5,10.5" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\BooksDimensionsContainer\BooksDimPublishers"
-          TopLeft="184.5,8.5" />
-        <NodeLayout
-          Size="203,42"
-          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear"
-          TopLeft="734,10" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="942,58"
-          Size="942,101"
-          Id="Package\BooksDimensionsContainer"
-          TopLeft="7,239" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="645.5,207.25">
@@ -4240,33 +4502,33 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
         <NodeLayout
           Size="158,42"
           Id="Package\BooksDimensionsContainer\BooksDimGenres\Derived Column"
-          TopLeft="400,151" />
+          TopLeft="275,149" />
         <EdgeLayout
           Id="Package\BooksDimensionsContainer\BooksDimGenres.Paths[OLE DB Source Output]"
           TopLeft="461.5,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.5,56"
+              EndConnector="-107.5,54"
               Start="0,0"
-              End="17.5,48.5">
+              End="-107.5,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24" />
+                    End="0,23" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="-4,27" />
                   <mssgle:LineSegment
-                    End="13.5,28" />
+                    End="-103.5,27" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.5,28"
-                    Point2="17.5,28"
-                    Point3="17.5,32" />
+                    Point1="-103.5,27"
+                    Point2="-107.5,27"
+                    Point3="-107.5,31" />
                   <mssgle:LineSegment
-                    End="17.5,48.5" />
+                    End="-107.5,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4277,18 +4539,30 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\BooksDimensionsContainer\BooksDimGenres.Paths[Derived Column Output]"
-          TopLeft="475.75,193">
+          TopLeft="354,191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,81"
+              EndConnector="118.5,83"
               Start="0,0"
-              End="0,73.5">
+              End="118.5,75.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.5" />
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="4,41.5" />
+                  <mssgle:LineSegment
+                    End="114.5,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.5,41.5"
+                    Point2="118.5,41.5"
+                    Point3="118.5,45.5" />
+                  <mssgle:LineSegment
+                    End="118.5,75.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4330,11 +4604,7 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
     design-time-name="Package\BooksDimensionsContainer\BooksDimLanguages">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination"
-          TopLeft="379,309" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source"
@@ -4342,25 +4612,37 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
         <NodeLayout
           Size="158,42"
           Id="Package\BooksDimensionsContainer\BooksDimLanguages\Derived Column"
-          TopLeft="389,124" />
+          TopLeft="198,94" />
         <NodeLayout
           Size="130,42"
           Id="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate"
-          TopLeft="399,217" />
+          TopLeft="486,181" />
         <EdgeLayout
           Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[OLE DB Source Output]"
-          TopLeft="467.75,66">
+          TopLeft="467.5,66">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58"
+              EndConnector="-190.5,28"
               Start="0,0"
-              End="0,50.5">
+              End="-190.5,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="-4,14" />
+                  <mssgle:LineSegment
+                    End="-186.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.5,14"
+                    Point2="-190.5,14"
+                    Point3="-190.5,18" />
+                  <mssgle:LineSegment
+                    End="-190.5,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4371,18 +4653,72 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Derived Column Output]"
-          TopLeft="466,166">
+          TopLeft="277,136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="274,45"
               Start="0,0"
-              End="0,43.5">
+              End="274,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="270,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="270,22.5"
+                    Point2="274,22.5"
+                    Point3="274,26.5" />
+                  <mssgle:LineSegment
+                    End="274,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination"
+          TopLeft="385,311" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion"
+          TopLeft="193,260" />
+        <EdgeLayout
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Aggregate Output 1]"
+          TopLeft="551,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-277.5,37"
+              Start="0,0"
+              End="-277.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-273.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-273.5,18.5"
+                    Point2="-277.5,18.5"
+                    Point3="-277.5,22.5" />
+                  <mssgle:LineSegment
+                    End="-277.5,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4392,19 +4728,31 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Aggregate Output 1]"
-          TopLeft="465.75,259">
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Data Conversion Output]"
+          TopLeft="354,281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="31,51"
               Start="0,0"
-              End="0,42.5">
+              End="23.5,51">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="11.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,0"
+                    Point2="15.5,0"
+                    Point3="15.5,4" />
+                  <mssgle:LineSegment
+                    End="15.5,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,47"
+                    Point2="15.5,51"
+                    Point3="19.5,51" />
+                  <mssgle:LineSegment
+                    End="23.5,51" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4416,19 +4764,6 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source">
     <Properties>
@@ -4502,18 +4837,127 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\RemoveDuplicates"
+          TopLeft="284,156" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Destination"
+          TopLeft="457,239" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Source"
+          TopLeft="462,55" />
+        <EdgeLayout
+          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear.Paths[Sort Output]"
+          TopLeft="369.5,198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176,41"
+              Start="0,0"
+              End="176,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
+                  <mssgle:LineSegment
+                    End="172,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172,20.5"
+                    Point2="176,20.5"
+                    Point3="176,24.5" />
+                  <mssgle:LineSegment
+                    End="176,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear.Paths[OLE DB Source Output]"
+          TopLeft="540.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171,59"
+              Start="0,0"
+              End="-171,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
+                  <mssgle:LineSegment
+                    End="-167,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167,29.5"
+                    Point2="-171,29.5"
+                    Point3="-171,33.5" />
+                  <mssgle:LineSegment
+                    End="-171,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\BooksSalesFacts">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
-          Id="Package\BooksSalesFacts\OLE DB Source"
-          TopLeft="375,29" />
-        <NodeLayout
           Size="177,42"
           Id="Package\BooksSalesFacts\OLE DB Destination"
           TopLeft="371,218" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\BooksSalesFacts\OLE DB Source"
+          TopLeft="375,29" />
         <EdgeLayout
           Id="Package\BooksSalesFacts.Paths[OLE DB Source Output]"
           TopLeft="456.5,71">
@@ -4564,7 +5008,7 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
     design-time-name="Package\DimBooksStagingData">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157,42"
           Id="Package\DimBooksStagingData\OLE DB Source"
@@ -4573,20 +5017,70 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
           Size="177,42"
           Id="Package\DimBooksStagingData\OLE DB Destination"
           TopLeft="403,287" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DimBooksStagingData\Data Conversion"
+          TopLeft="272,161" />
         <EdgeLayout
           Id="Package\DimBooksStagingData.Paths[OLE DB Source Output]"
           TopLeft="491.5,80">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,207"
+              EndConnector="-139,81"
               Start="0,0"
-              End="0,199.5">
+              End="-139,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,199.5" />
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="-4,40.5" />
+                  <mssgle:LineSegment
+                    End="-135,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135,40.5"
+                    Point2="-139,40.5"
+                    Point3="-139,44.5" />
+                  <mssgle:LineSegment
+                    End="-139,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimBooksStagingData.Paths[Data Conversion Output]"
+          TopLeft="352.5,203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139,84"
+              Start="0,0"
+              End="139,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="4,42" />
+                  <mssgle:LineSegment
+                    End="135,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="135,42"
+                    Point2="139,42"
+                    Point3="139,46" />
+                  <mssgle:LineSegment
+                    End="139,76.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4630,81 +5124,33 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="144,42"
-          Id="Package\Loading Books File\Excel Source"
-          TopLeft="428,21" />
-        <NodeLayout
           Size="161,42"
           Id="Package\Loading Books File\Data Conversion"
           TopLeft="304,97" />
-        <EdgeLayout
-          Id="Package\Loading Books File.Paths[Excel Source Output]"
-          TopLeft="500,63">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-115.5,34"
-              Start="0,0"
-              End="-115.5,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="-4,17" />
-                  <mssgle:LineSegment
-                    End="-111.5,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-111.5,17"
-                    Point2="-115.5,17"
-                    Point3="-115.5,21" />
-                  <mssgle:LineSegment
-                    End="-115.5,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="159,42"
-          Id="Package\Loading Books File\Conditional Split"
-          TopLeft="590,202" />
+          Size="168,42"
+          Id="Package\Loading Books File\Conditional Split 1"
+          TopLeft="96,99" />
         <NodeLayout
           Size="177,42"
           Id="Package\Loading Books File\OLE DB Destination"
           TopLeft="430,335" />
         <NodeLayout
           Size="168,42"
-          Id="Package\Loading Books File\Conditional Split 1"
-          TopLeft="96,99" />
-        <EdgeLayout
-          Id="Package\Loading Books File.Paths[Data Conversion Output]"
-          TopLeft="304,119">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-40,0"
-              Start="0,0"
-              End="-32.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-32.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Loading Books File\Conditional Split 2"
+          TopLeft="346,215" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Loading Books File\Excel Source"
+          TopLeft="428,21" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Loading Books File\Conditional Split 3"
+          TopLeft="51,199" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Loading Books File\Conditional Split"
+          TopLeft="590,202" />
         <EdgeLayout
           Id="Package\Loading Books File.Paths[NOT NULL YEARS]"
           TopLeft="180,141">
@@ -4738,86 +5184,6 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="205.14751953125,35.5,79.2049609375,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Loading Books File\Conditional Split 2"
-          TopLeft="346,215" />
-        <EdgeLayout
-          Id="Package\Loading Books File.Paths[POSTIVE YEARS]"
-          TopLeft="590,223">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-76,13"
-              Start="0,0"
-              End="-68.5,13">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-34,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-34,0"
-                    Point2="-38,0"
-                    Point3="-38,4" />
-                  <mssgle:LineSegment
-                    End="-38,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38,9"
-                    Point2="-38,13"
-                    Point3="-42,13" />
-                  <mssgle:LineSegment
-                    End="-68.5,13" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-74.30248046875,-15.5732421875,72.6049609375,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Loading Books File\Conditional Split 3"
-          TopLeft="51,199" />
-        <EdgeLayout
-          Id="Package\Loading Books File.Paths[NOT NULL LANGUAGE CODE]"
-          TopLeft="346,236">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-127,-16"
-              Start="0,0"
-              End="-119.5,-16">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-59.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.5,0"
-                    Point2="-63.5,0"
-                    Point3="-63.5,-4" />
-                  <mssgle:LineSegment
-                    End="-63.5,-12" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-63.5,-12"
-                    Point2="-63.5,-16"
-                    Point3="-67.5,-16" />
-                  <mssgle:LineSegment
-                    End="-119.5,-16" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-127.37294921875,1,127.7458984375,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4857,9 +5223,154 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Books File.Paths[NOT NULL LANGUAGE CODE]"
+          TopLeft="346,236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-127,-16"
+              Start="0,0"
+              End="-119.5,-16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-59.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.5,0"
+                    Point2="-63.5,0"
+                    Point3="-63.5,-4" />
+                  <mssgle:LineSegment
+                    End="-63.5,-12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.5,-12"
+                    Point2="-63.5,-16"
+                    Point3="-67.5,-16" />
+                  <mssgle:LineSegment
+                    End="-119.5,-16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.37294921875,1,127.7458984375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Books File.Paths[Excel Source Output]"
+          TopLeft="500,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.5,34"
+              Start="0,0"
+              End="-115.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-111.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.5,17"
+                    Point2="-115.5,17"
+                    Point3="-115.5,21" />
+                  <mssgle:LineSegment
+                    End="-115.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Books File.Paths[Data Conversion Output]"
+          TopLeft="304,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40,0"
+              Start="0,0"
+              End="-32.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-32.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Books File.Paths[POSTIVE YEARS]"
+          TopLeft="590,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-76,13"
+              Start="0,0"
+              End="-68.5,13">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-34,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34,0"
+                    Point2="-38,0"
+                    Point3="-38,4" />
+                  <mssgle:LineSegment
+                    End="-38,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38,9"
+                    Point2="-38,13"
+                    Point3="-42,13" />
+                  <mssgle:LineSegment
+                    End="-68.5,13" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-74.30248046875,-15.5732421875,72.6049609375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loading Books File\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Loading Books File\Excel Source">
     <Properties>
@@ -4874,116 +5385,7 @@ AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Loading Books File\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Source"
-          TopLeft="462,55" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Destination"
-          TopLeft="457,239" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\RemoveDuplicates"
-          TopLeft="284,156" />
-        <EdgeLayout
-          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear.Paths[OLE DB Source Output]"
-          TopLeft="540.5,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-171,59"
-              Start="0,0"
-              End="-171,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="-4,29.5" />
-                  <mssgle:LineSegment
-                    End="-167,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-167,29.5"
-                    Point2="-171,29.5"
-                    Point3="-171,33.5" />
-                  <mssgle:LineSegment
-                    End="-171,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\BooksDimensionsContainer\BooksDimPublishingYear.Paths[Sort Output]"
-          TopLeft="369.5,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176,41"
-              Start="0,0"
-              End="176,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="4,20.5" />
-                  <mssgle:LineSegment
-                    End="172,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172,20.5"
-                    Point2="176,20.5"
-                    Point3="176,24.5" />
-                  <mssgle:LineSegment
-                    End="176,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear\OLE DB Destination">
+    design-time-name="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

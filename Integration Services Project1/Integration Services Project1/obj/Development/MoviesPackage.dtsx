@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="110"
-  DTS:VersionGUID="{35500808-00C9-43D0-B9C4-FBE04E2745D3}">
+  DTS:VersionBuild="112"
+  DTS:VersionGUID="{909F0E19-99E8-4030-A616-07CC8B20FC1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4523,6 +4523,29 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="184,42"
+          Id="Package\DimensionsContainer\MoviesDimDistributor"
+          TopLeft="234.5,5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\DimensionsContainer\MoviesDimGenre"
+          TopLeft="438.5,2" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DimensionsContainer\MoviesDimLicense"
+          TopLeft="617.5,2" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\DimensionsContainer\MoviesDimReleaseDate"
+          TopLeft="5.5,5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="794,52"
+          Size="794,95"
+          Id="Package\DimensionsContainer"
+          TopLeft="342,242" />
+        <NodeLayout
           Size="194,42"
           Id="Package\DimMoviesStagingData"
           TopLeft="643.5,173" />
@@ -4606,29 +4629,6 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="197,42"
-          Id="Package\DimensionsContainer\MoviesDimReleaseDate"
-          TopLeft="5.5,5" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DimensionsContainer\MoviesDimDistributor"
-          TopLeft="234.5,5" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\DimensionsContainer\MoviesDimGenre"
-          TopLeft="438.5,2" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\DimensionsContainer\MoviesDimLicense"
-          TopLeft="617.5,2" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="794,52"
-          Size="794,95"
-          Id="Package\DimensionsContainer"
-          TopLeft="342,242" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="739.75,215">
@@ -4689,144 +4689,22 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DimensionsContainer\MoviesDimReleaseDate">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Source"
-          TopLeft="412,49" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Destination"
-          TopLeft="407,225" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\MoviesDimReleaseDate\Remove Duplication"
-          TopLeft="350,132" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimReleaseDate.Paths[OLE DB Source Output]"
-          TopLeft="490.5,91">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-52,41"
-              Start="0,0"
-              End="-52,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="-4,20.5" />
-                  <mssgle:LineSegment
-                    End="-48,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48,20.5"
-                    Point2="-52,20.5"
-                    Point3="-52,24.5" />
-                  <mssgle:LineSegment
-                    End="-52,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimReleaseDate.Paths[Sort Output]"
-          TopLeft="438.5,174">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="57,51"
-              Start="0,0"
-              End="57,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5"
-                    Point2="0,25.5"
-                    Point3="4,25.5" />
-                  <mssgle:LineSegment
-                    End="53,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53,25.5"
-                    Point2="57,25.5"
-                    Point3="57,29.5" />
-                  <mssgle:LineSegment
-                    End="57,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\DimensionsContainer\MoviesDimDistributor">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Source"
-          TopLeft="419,54" />
+          Size="177,42"
+          Id="Package\DimensionsContainer\MoviesDimDistributor\Remove Duplication"
+          TopLeft="270,146" />
         <NodeLayout
           Size="177,42"
           Id="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Destination"
           TopLeft="410,246" />
         <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\MoviesDimDistributor\Remove Duplication"
-          TopLeft="270,146" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimDistributor.Paths[OLE DB Source Output]"
-          TopLeft="497.5,96">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-139,50"
-              Start="0,0"
-              End="-139,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="-4,25" />
-                  <mssgle:LineSegment
-                    End="-135,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-135,25"
-                    Point2="-139,25"
-                    Point3="-139,29" />
-                  <mssgle:LineSegment
-                    End="-139,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="157,42"
+          Id="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Source"
+          TopLeft="419,54" />
         <EdgeLayout
           Id="Package\DimensionsContainer\MoviesDimDistributor.Paths[Sort Output]"
           TopLeft="358.5,188">
@@ -4861,9 +4739,64 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimDistributor.Paths[OLE DB Source Output]"
+          TopLeft="497.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-139,50"
+              Start="0,0"
+              End="-139,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="-4,25" />
+                  <mssgle:LineSegment
+                    End="-135,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135,25"
+                    Point2="-139,25"
+                    Point3="-139,29" />
+                  <mssgle:LineSegment
+                    End="-139,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DimensionsContainer\MoviesDimGenre">
     <LayoutInfo>
@@ -4872,128 +4805,38 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
         <NodeLayout
           Size="177,42"
           Id="Package\DimensionsContainer\MoviesDimGenre\Remove Duplication"
-          TopLeft="318,86" />
+          TopLeft="210,123" />
         <NodeLayout
           Size="157,42"
           Id="Package\DimensionsContainer\MoviesDimGenre\OLE DB Source"
-          TopLeft="481,17" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[OLE DB Source Output]"
-          TopLeft="559.5,59">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-153,27"
-              Start="0,0"
-              End="-153,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="-4,13.5" />
-                  <mssgle:LineSegment
-                    End="-149,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-149,13.5"
-                    Point2="-153,13.5"
-                    Point3="-153,17.5" />
-                  <mssgle:LineSegment
-                    End="-153,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="373,54" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\DimensionsContainer\MoviesDimGenre\Script Component"
-          TopLeft="638,164" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Sort Output]"
-          TopLeft="406.5,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="315,36"
-              Start="0,0"
-              End="315,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="4,18" />
-                  <mssgle:LineSegment
-                    End="311,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="311,18"
-                    Point2="315,18"
-                    Point3="315,22" />
-                  <mssgle:LineSegment
-                    End="315,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\DimensionsContainer\MoviesDimGenre\Remove Left Bracket"
-          TopLeft="333,219" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Output 0]"
-          TopLeft="638,185">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-124,55"
-              Start="0,0"
-              End="-116.5,55">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-58,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-58,0"
-                    Point2="-62,0"
-                    Point3="-62,4" />
-                  <mssgle:LineSegment
-                    End="-62,51" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62,51"
-                    Point2="-62,55"
-                    Point3="-66,55" />
-                  <mssgle:LineSegment
-                    End="-116.5,55" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="177,42"
+          Id="Package\DimensionsContainer\MoviesDimGenre\OLE DB Destination"
+          TopLeft="525,358" />
         <NodeLayout
           Size="189,42"
           Id="Package\DimensionsContainer\MoviesDimGenre\Remove Right Bracket"
-          TopLeft="122,219" />
+          TopLeft="14,256" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DimensionsContainer\MoviesDimGenre\Remove Duplication1"
+          TopLeft="327,334" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\DimensionsContainer\MoviesDimGenre\Script Component"
+          TopLeft="530,201" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DimensionsContainer\MoviesDimGenre\Derived Column"
+          TopLeft="28,333" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\DimensionsContainer\MoviesDimGenre\Remove Left Bracket"
+          TopLeft="225,256" />
         <EdgeLayout
           Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Derived Column Output]"
-          TopLeft="423.5,219">
+          TopLeft="315.5,256">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5025,17 +4868,9 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DimensionsContainer\MoviesDimGenre\Remove Duplication1"
-          TopLeft="435,297" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\MoviesDimGenre\OLE DB Destination"
-          TopLeft="633,321" />
         <EdgeLayout
           Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Sort Output1]"
-          TopLeft="619,298.5">
+          TopLeft="511,335.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5061,24 +4896,100 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\DimensionsContainer\MoviesDimGenre\Derived Column"
-          TopLeft="136,296" />
         <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Derived Column Output1]"
-          TopLeft="215.75,261">
+          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Sort Output]"
+          TopLeft="298.5,165">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="315,36"
               Start="0,0"
-              End="0,27.5">
+              End="315,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="311,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="311,18"
+                    Point2="315,18"
+                    Point3="315,22" />
+                  <mssgle:LineSegment
+                    End="315,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Output 0]"
+          TopLeft="530,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-124,55"
+              Start="0,0"
+              End="-116.5,55">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-58,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58,0"
+                    Point2="-62,0"
+                    Point3="-62,4" />
+                  <mssgle:LineSegment
+                    End="-62,51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62,51"
+                    Point2="-62,55"
+                    Point3="-66,55" />
+                  <mssgle:LineSegment
+                    End="-116.5,55" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[OLE DB Source Output]"
+          TopLeft="451.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-153,27"
+              Start="0,0"
+              End="-153,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="-4,13.5" />
+                  <mssgle:LineSegment
+                    End="-149,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-149,13.5"
+                    Point2="-153,13.5"
+                    Point3="-153,17.5" />
+                  <mssgle:LineSegment
+                    End="-153,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5089,7 +5000,7 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Derived Column Output2]"
-          TopLeft="294,317.5">
+          TopLeft="186,354.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5109,9 +5020,270 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Derived Column Output1]"
+          TopLeft="107.75,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimGenre\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimGenre\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimensionsContainer\MoviesDimLicense">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="99,42"
+          Id="Package\DimensionsContainer\MoviesDimLicense\Sort"
+          TopLeft="254,118" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimensionsContainer\MoviesDimLicense\OLE DB Source"
+          TopLeft="437,30" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\MoviesDimLicense\OLE DB Destination"
+          TopLeft="425,229" />
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimLicense.Paths[OLE DB Source Output]"
+          TopLeft="515.5,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-212,46"
+              Start="0,0"
+              End="-212,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="-4,23" />
+                  <mssgle:LineSegment
+                    End="-208,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-208,23"
+                    Point2="-212,23"
+                    Point3="-212,27" />
+                  <mssgle:LineSegment
+                    End="-212,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimLicense.Paths[Sort Output]"
+          TopLeft="303.5,160">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="210,69"
+              Start="0,0"
+              End="210,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="206,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="206,34.5"
+                    Point2="210,34.5"
+                    Point3="210,38.5" />
+                  <mssgle:LineSegment
+                    End="210,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimLicense\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimLicense\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DimensionsContainer\MoviesDimReleaseDate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\MoviesDimReleaseDate\Remove Duplication"
+          TopLeft="350,132" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Destination"
+          TopLeft="407,225" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Source"
+          TopLeft="412,49" />
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimReleaseDate.Paths[Sort Output]"
+          TopLeft="438.5,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57,51"
+              Start="0,0"
+              End="57,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="53,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53,25.5"
+                    Point2="57,25.5"
+                    Point3="57,29.5" />
+                  <mssgle:LineSegment
+                    End="57,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionsContainer\MoviesDimReleaseDate.Paths[OLE DB Source Output]"
+          TopLeft="490.5,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52,41"
+              Start="0,0"
+              End="-52,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-48,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48,20.5"
+                    Point2="-52,20.5"
+                    Point3="-52,24.5" />
+                  <mssgle:LineSegment
+                    End="-52,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DimMoviesStagingData">
     <LayoutInfo>
@@ -5259,57 +5431,44 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactMovies\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactMovies\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Loading Movies File">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="144,42"
-          Id="Package\Loading Movies File\Excel Source"
-          TopLeft="408,24" />
-        <NodeLayout
           Size="204,42"
           Id="Package\Loading Movies File\Remove NA RelaseDates"
           TopLeft="241,99" />
-        <EdgeLayout
-          Id="Package\Loading Movies File.Paths[Excel Source Output]"
-          TopLeft="480,66">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-137,33"
-              Start="0,0"
-              End="-137,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="-4,16.5" />
-                  <mssgle:LineSegment
-                    End="-133,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-133,16.5"
-                    Point2="-137,16.5"
-                    Point3="-137,20.5" />
-                  <mssgle:LineSegment
-                    End="-137,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="177,42"
           Id="Package\Loading Movies File\OLE DB Destination"
           TopLeft="349,283" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Loading Movies File\Excel Source"
+          TopLeft="408,24" />
         <NodeLayout
           Size="179,42"
           Id="Package\Loading Movies File\Remove NA License"
@@ -5386,22 +5545,43 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Movies File.Paths[Excel Source Output]"
+          TopLeft="480,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-137,33"
+              Start="0,0"
+              End="-137,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="-4,16.5" />
+                  <mssgle:LineSegment
+                    End="-133,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-133,16.5"
+                    Point2="-137,16.5"
+                    Point3="-137,20.5" />
+                  <mssgle:LineSegment
+                    End="-137,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Loading Movies File\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Loading Movies File\OLE DB Destination">
     <Properties>
@@ -5416,15 +5596,7 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimReleaseDate\OLE DB Destination">
+    design-time-name="Package\Loading Movies File\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5433,178 +5605,6 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimDistributor\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DimensionsContainer\MoviesDimLicense">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="99,42"
-          Id="Package\DimensionsContainer\MoviesDimLicense\Sort"
-          TopLeft="254,118" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimensionsContainer\MoviesDimLicense\OLE DB Source"
-          TopLeft="437,30" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\DimensionsContainer\MoviesDimLicense\OLE DB Destination"
-          TopLeft="425,229" />
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimLicense.Paths[OLE DB Source Output]"
-          TopLeft="515.5,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-212,46"
-              Start="0,0"
-              End="-212,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="-4,23" />
-                  <mssgle:LineSegment
-                    End="-208,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-208,23"
-                    Point2="-212,23"
-                    Point3="-212,27" />
-                  <mssgle:LineSegment
-                    End="-212,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionsContainer\MoviesDimLicense.Paths[Sort Output]"
-          TopLeft="303.5,160">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="210,69"
-              Start="0,0"
-              End="210,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="4,34.5" />
-                  <mssgle:LineSegment
-                    End="206,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="206,34.5"
-                    Point2="210,34.5"
-                    Point3="210,38.5" />
-                  <mssgle:LineSegment
-                    End="210,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimGenre\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimLicense\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimLicense\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionsContainer\MoviesDimGenre\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactMovies\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactMovies\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

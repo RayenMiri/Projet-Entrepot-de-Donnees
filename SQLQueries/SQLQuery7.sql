@@ -81,4 +81,8 @@ SELECT * from MoviesDimLicense
 insert into MoviesDimLicense SELECT distinct License from MoviesDB
 
 select * from MoviesSalesFacts
+
 delete from MoviesSalesFacts
+
+
+SELECT distinct publisher FROM VGDB order by publisher

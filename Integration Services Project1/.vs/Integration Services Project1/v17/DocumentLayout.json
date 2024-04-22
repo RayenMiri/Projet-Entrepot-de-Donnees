@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|solutionrelative:Integration Services Project1\\BooksPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|C:\\Users\\GLADIATEUR-1650-8\\ProjetEntrepot\\Integration Services Project1\\Integration Services Project1\\MoviesPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|solutionrelative:Integration Services Project1\\MoviesPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|C:\\Users\\GLADIATEUR-1650-8\\ProjetEntrepot\\Integration Services Project1\\Integration Services Project1\\VGPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
       "RelativeMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|solutionrelative:Integration Services Project1\\VGPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|C:\\Users\\GLADIATEUR-1650-8\\ProjetEntrepot\\Integration Services Project1\\Integration Services Project1\\MoviesPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{514025EB-3051-40BC-AACB-A54E75A467BC}|Integration Services Project1\\Integration Services Project1.dtproj|solutionrelative:Integration Services Project1\\MoviesPackage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "VGPackage.dtsx [Design]",
               "DocumentMoniker": "C:\\Users\\GLADIATEUR-1650-8\\ProjetEntrepot\\Integration Services Project1\\Integration Services Project1\\VGPackage.dtsx",
               "RelativeDocumentMoniker": "Integration Services Project1\\VGPackage.dtsx",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MoviesPackage.dtsx [Design]",
               "DocumentMoniker": "C:\\Users\\GLADIATEUR-1650-8\\ProjetEntrepot\\Integration Services Project1\\Integration Services Project1\\MoviesPackage.dtsx",
               "RelativeDocumentMoniker": "Integration Services Project1\\MoviesPackage.dtsx",

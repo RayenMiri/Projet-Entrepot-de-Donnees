@@ -60,6 +60,9 @@ CREATE TABLE BooksSalesFacts (
     Book_ID INT,
     Publisher_ID INT,
 	Publishing_Year_ID INT,
+	Genre_ID INT,
+	Language_Code INT,
+	Author_ID INT,
     Gross_Sales FLOAT,
     Publisher_Revenue FLOAT,
     Sale_Price FLOAT,
@@ -67,7 +70,10 @@ CREATE TABLE BooksSalesFacts (
     Units_Sold INT,
     FOREIGN KEY (Book_ID) REFERENCES BooksDimension(Book_ID) on delete cascade on update cascade,
     FOREIGN KEY (Publisher_ID) REFERENCES BooksDimPublishers(Publisher_ID) on delete cascade on update cascade,
-	FOREIGN KEY (Publishing_Year_ID) REFERENCES BooksDimPublishingYear(Publishing_Year_ID) on delete cascade on update cascade
+	FOREIGN KEY (Publishing_Year_ID) REFERENCES BooksDimPublishingYear(Publishing_Year_ID) on delete cascade on update cascade,
+	FOREIGN KEY (Genre_ID) REFERENCES BooksDimGenres(Genre_ID) on delete cascade on update cascade,
+	FOREIGN KEY (Language_Code) REFERENCES BooksDimLanguages(Language_Code) on delete cascade on update cascade,
+	FOREIGN KEY (Author_ID) REFERENCES BooksDimAuthors(Author_ID) on delete cascade on update cascade,
 );
 
 drop table BooksSalesFacts
@@ -101,12 +107,27 @@ SELECT * FROM BooksDB;
 SELECT * FROM BooksDimPublishers
 delete from BooksSalesFacts
 
-insert into BooksSalesFacts SELECT BDim.Book_ID ,BDimP.Publisher_ID,Publishing_Year_ID  ,BDB.Gross_Sales , BDB.Publisher_Revenue , BDB.Sale_Price , BDB.Sales_Rank , BDB.Units_Sold
-FROM BooksDimension as BDim , BooksDB as BDB , BooksDimPublishers as BDimP , BooksDimPublishingYear as BDY
+SELECT BDim.Book_ID ,BDimP.Publisher_ID,Publishing_Year_ID ,Genre_ID , BL.Language_Description,Author_ID,BDB.Gross_Sales , BDB.Publisher_Revenue , BDB.Sale_Price , BDB.Sales_Rank , BDB.Units_Sold
+FROM BooksDimension as BDim , BooksDB as BDB , BooksDimPublishers as BDimP , BooksDimPublishingYear as BDY,BooksDimGenres as BG , BooksDimLanguages as BL , BooksDimAuthors as BA
 WHERE BDB.publisher = BDimP.Publisher_Name 
 AND BDB.publishing_year = BDY.Publishing_Year 
-AND BDim.Book_ID = BDB.Book_ID order by Gross_Sales desc
+AND BDim.Book_ID = BDB.Book_ID 
+AND BDim.Genre_Name = BG.Genre_Name
+AND BDim.Language_Description = BL.Language_Description
+AND BDim.Author_Name = BA.Author_Name
+order by Gross_Sales desc
 
+select * from BooksDimension
+
+UPDATE BooksDimension
+SET Language_Description = 'en'
+WHERE Language_Description LIKE 'en-%' or  Language_Description LIKE 'en%' ;
+
+select Language_Description from BooksDimension
+
+UPDATE BooksDimension
+SET Genre_Name = 'fiction'
+WHERE Genre_Name = 'genre fiction';select * from BooksDimension
 select * from BooksSalesFacts order by Gross_Sales desc
 
 SELECT BDB.Book_ID ,BDimP.Publisher_ID,Publishing_Year_ID  ,BDB.Gross_Sales , BDB.Publisher_Revenue , BDB.Sale_Price , BDB.Sales_Rank , BDB.Units_Sold
