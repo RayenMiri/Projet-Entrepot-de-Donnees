@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="112"
-  DTS:VersionGUID="{909F0E19-99E8-4030-A616-07CC8B20FC1F}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{4AC6734B-3832-465E-8120-7970CB20A82A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4825,7 +4825,7 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
         <NodeLayout
           Size="167,42"
           Id="Package\DimensionsContainer\MoviesDimGenre\Script Component"
-          TopLeft="530,201" />
+          TopLeft="529,200" />
         <NodeLayout
           Size="158,42"
           Id="Package\DimensionsContainer\MoviesDimGenre\Derived Column"
@@ -4902,26 +4902,26 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="315,36"
+              EndConnector="314,35"
               Start="0,0"
-              End="315,28.5">
+              End="314,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14" />
+                    End="0,13.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="4,18" />
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
                   <mssgle:LineSegment
-                    End="311,18" />
+                    End="310,17.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="311,18"
-                    Point2="315,18"
-                    Point3="315,22" />
+                    Point1="310,17.5"
+                    Point2="314,17.5"
+                    Point3="314,21.5" />
                   <mssgle:LineSegment
-                    End="315,28.5" />
+                    End="314,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4932,30 +4932,30 @@ AND M.License = ML.License ) AS T1 ORDER BY T1.Title DESC</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DimensionsContainer\MoviesDimGenre.Paths[Output 0]"
-          TopLeft="530,222">
+          TopLeft="529,221">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-124,55"
+              EndConnector="-123,56"
               Start="0,0"
-              End="-116.5,55">
+              End="-115.5,56">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-58,0" />
+                    End="-57.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-58,0"
-                    Point2="-62,0"
-                    Point3="-62,4" />
+                    Point1="-57.5,0"
+                    Point2="-61.5,0"
+                    Point3="-61.5,4" />
                   <mssgle:LineSegment
-                    End="-62,51" />
+                    End="-61.5,52" />
                   <mssgle:CubicBezierSegment
-                    Point1="-62,51"
-                    Point2="-62,55"
-                    Point3="-66,55" />
+                    Point1="-61.5,52"
+                    Point2="-61.5,56"
+                    Point3="-65.5,56" />
                   <mssgle:LineSegment
-                    End="-116.5,55" />
+                    End="-115.5,56" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

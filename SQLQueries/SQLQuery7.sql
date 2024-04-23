@@ -1,8 +1,3 @@
-SELECT Movie_ID , title , Movie_Info , distributor , relase_date , genre ,movie_runtime , license
-FROM MoviesDB
-ORDER BY Movie_ID;
-drop table MoviesDB
-
 CREATE TABLE MoviesDimension(
 	Movie_ID INT primary key,
 	title NVARCHAR(255),
@@ -72,6 +67,8 @@ AND YEAR(M.Release_Date) = MRD.Release_Date
 AND M.Genre LIKE '%'+MG.Genre+'%'
 AND M.License = ML.License
 
+select * from MoviesDimension
+
 insert into MoviesDimGenre SELECT distinct Genre FROM MoviesDimGenre
 
 SELECT * from MoviesDimGenre
@@ -80,9 +77,11 @@ SELECT * from MoviesDimLicense
 
 insert into MoviesDimLicense SELECT distinct License from MoviesDB
 
-select * from MoviesSalesFacts
-
+select sum(world_sales) as sum_ws, Release_Date_ID as RD from MoviesSalesFacts group by (Release_Date_ID) order by sum_ws desc 
+select * from MoviesDimReleaseDate
 delete from MoviesSalesFacts
 
 
 SELECT distinct publisher FROM VGDB order by publisher
+
+select * from MoviesDimGenre WHERE Genre = 'Crime'

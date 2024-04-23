@@ -146,3 +146,8 @@ WHERE B.publishing_year = Y.Publishing_Year
 
 delete from BooksDimPublishingYear
 INSERT INTO BooksDimPublishingYear SELECT distinct publishing_year FROM BooksDB
+
+
+SELECT * from BooksSalesFacts WHERE Language_code = 133
+
+SELECT * FROM BooksDimLanguages
