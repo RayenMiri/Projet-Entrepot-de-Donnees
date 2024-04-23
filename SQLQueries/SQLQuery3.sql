@@ -128,6 +128,7 @@ select Language_Description from BooksDimension
 UPDATE BooksDimension
 SET Genre_Name = 'fiction'
 WHERE Genre_Name = 'genre fiction';select * from BooksDimension
+
 select * from BooksSalesFacts order by Gross_Sales desc
 
 SELECT BDB.Book_ID ,BDimP.Publisher_ID,Publishing_Year_ID  ,BDB.Gross_Sales , BDB.Publisher_Revenue , BDB.Sale_Price , BDB.Sales_Rank , BDB.Units_Sold

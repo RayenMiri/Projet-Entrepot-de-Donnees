@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="BooksPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="283"
-  DTS:VersionGUID="{48A102F0-68AA-4D48-B4B0-F9D9492095F9}">
+  DTS:VersionBuild="287"
+  DTS:VersionGUID="{2F0C4267-CF7A-45B9-A0CA-57AF49EF7385}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4193,6 +4193,40 @@ order by Gross_Sales desc</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Genres"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F1803436-436C-421A-B1FB-28AA549A446E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Genres"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7F95EBF7-0BEE-411C-B2C9-C701F816D1DF}"
+          SQLTask:SqlStatementSource="UPDATE BooksDimension&#xA;SET Genre_Name = 'fiction'&#xA;WHERE Genre_Name = 'genre fiction';&#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Languages"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{526124BF-D700-4E32-B8D3-3A2DE8A4FBA2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Languages"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7F95EBF7-0BEE-411C-B2C9-C701F816D1DF}"
+          SQLTask:SqlStatementSource="UPDATE BooksDimension&#xA;SET Language_Description = 'en'&#xA;WHERE Language_Description LIKE 'en-%' or  Language_Description LIKE 'en%' ;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -4222,10 +4256,26 @@ order by Gross_Sales desc</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{54606121-B17F-4D52-94AD-DC0D4F7A8046}"
-      DTS:From="Package\BooksDimensionsContainer"
+      DTS:DTSID="{C58F1102-7E39-42FE-9495-6FDABC705239}"
+      DTS:From="Package\Update Genres"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update Languages" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F43D833-D668-4F92-A8D0-0D69E4AAFD66}"
+      DTS:From="Package\BooksDimensionsContainer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update Genres" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{98C63E1E-2D93-46AD-BB78-4143348D1AE8}"
+      DTS:From="Package\Update Languages"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
       DTS:To="Package\BooksSalesFacts" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -4239,7 +4289,7 @@ order by Gross_Sales desc</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="167,42"
           Id="Package\BooksDimensionsContainer\BooksDimAuthors"
@@ -4266,11 +4316,11 @@ order by Gross_Sales desc</property>
           PanelSize="942,58"
           Size="942,101"
           Id="Package\BooksDimensionsContainer"
-          TopLeft="7,239" />
+          TopLeft="7,238" />
         <NodeLayout
           Size="164,42"
           Id="Package\BooksSalesFacts"
-          TopLeft="555,373" />
+          TopLeft="549,434" />
         <NodeLayout
           Size="190,42"
           Id="Package\DimBooksStagingData"
@@ -4357,26 +4407,90 @@ order by Gross_Sales desc</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-167.5,31.75"
+              EndConnector="-167.5,30.75"
               Start="0,0"
-              End="-167.5,24.25">
+              End="-167.5,23.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.875" />
+                    End="0,11.375" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.875"
-                    Point2="0,15.875"
-                    Point3="-4,15.875" />
+                    Point1="0,11.375"
+                    Point2="0,15.375"
+                    Point3="-4,15.375" />
                   <mssgle:LineSegment
-                    End="-163.5,15.875" />
+                    End="-163.5,15.375" />
                   <mssgle:CubicBezierSegment
-                    Point1="-163.5,15.875"
-                    Point2="-167.5,15.875"
-                    Point3="-167.5,19.875" />
+                    Point1="-163.5,15.375"
+                    Point2="-167.5,15.375"
+                    Point3="-167.5,19.375" />
                   <mssgle:LineSegment
-                    End="-167.5,24.25" />
+                    End="-167.5,23.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Update Genres"
+          TopLeft="275,365" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="478,339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.5,26"
+              Start="0,0"
+              End="-126.5,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="-4,13" />
+                  <mssgle:LineSegment
+                    End="-122.5,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.5,13"
+                    Point2="-126.5,13"
+                    Point3="-126.5,17" />
+                  <mssgle:LineSegment
+                    End="-126.5,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Update Languages"
+          TopLeft="534,369" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="428,388">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106,0"
+              Start="0,0"
+              End="98.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="98.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4386,31 +4500,31 @@ order by Gross_Sales desc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="478,340">
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="620,411">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159,33"
+              EndConnector="11,23"
               Start="0,0"
-              End="159,25.5">
+              End="11,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
+                    End="0,7.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="4,16.5" />
+                    Point1="0,7.5"
+                    Point2="0,11.5"
+                    Point3="4,11.5" />
                   <mssgle:LineSegment
-                    End="155,16.5" />
+                    End="7,11.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="155,16.5"
-                    Point2="159,16.5"
-                    Point3="159,20.5" />
+                    Point1="7,11.5"
+                    Point2="11,11.5"
+                    Point3="11,15.5" />
                   <mssgle:LineSegment
-                    End="159,25.5" />
+                    End="11,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4426,7 +4540,7 @@ order by Gross_Sales desc</property>
     design-time-name="Package\BooksDimensionsContainer\BooksDimAuthors">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\BooksDimensionsContainer\BooksDimAuthors\OLE DB Source"
@@ -4454,7 +4568,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4490,7 +4606,7 @@ order by Gross_Sales desc</property>
     design-time-name="Package\BooksDimensionsContainer\BooksDimGenres">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\BooksDimensionsContainer\BooksDimGenres\OLE DB Destination"
@@ -4534,7 +4650,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4568,7 +4686,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4606,17 +4726,93 @@ order by Gross_Sales desc</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source"
-          TopLeft="389,24" />
-        <NodeLayout
           Size="158,42"
           Id="Package\BooksDimensionsContainer\BooksDimLanguages\Derived Column"
           TopLeft="198,94" />
         <NodeLayout
+          Size="157,42"
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Source"
+          TopLeft="389,24" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination"
+          TopLeft="385,311" />
+        <NodeLayout
           Size="130,42"
           Id="Package\BooksDimensionsContainer\BooksDimLanguages\Aggregate"
           TopLeft="486,181" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion"
+          TopLeft="193,260" />
+        <EdgeLayout
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Data Conversion Output]"
+          TopLeft="354,281">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,51"
+              Start="0,0"
+              End="23.5,51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="11.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,0"
+                    Point2="15.5,0"
+                    Point3="15.5,4" />
+                  <mssgle:LineSegment
+                    End="15.5,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,47"
+                    Point2="15.5,51"
+                    Point3="19.5,51" />
+                  <mssgle:LineSegment
+                    End="23.5,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Aggregate Output 1]"
+          TopLeft="551,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-277.5,37"
+              Start="0,0"
+              End="-277.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-273.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-273.5,18.5"
+                    Point2="-277.5,18.5"
+                    Point3="-277.5,22.5" />
+                  <mssgle:LineSegment
+                    End="-277.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[OLE DB Source Output]"
           TopLeft="467.5,66">
@@ -4685,82 +4881,6 @@ order by Gross_Sales desc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination"
-          TopLeft="385,311" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages\Data Conversion"
-          TopLeft="193,260" />
-        <EdgeLayout
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Aggregate Output 1]"
-          TopLeft="551,223">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-277.5,37"
-              Start="0,0"
-              End="-277.5,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="-4,18.5" />
-                  <mssgle:LineSegment
-                    End="-273.5,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-273.5,18.5"
-                    Point2="-277.5,18.5"
-                    Point3="-277.5,22.5" />
-                  <mssgle:LineSegment
-                    End="-277.5,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\BooksDimensionsContainer\BooksDimLanguages.Paths[Data Conversion Output]"
-          TopLeft="354,281">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31,51"
-              Start="0,0"
-              End="23.5,51">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="11.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.5,0"
-                    Point2="15.5,0"
-                    Point3="15.5,4" />
-                  <mssgle:LineSegment
-                    End="15.5,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.5,47"
-                    Point2="15.5,51"
-                    Point3="19.5,51" />
-                  <mssgle:LineSegment
-                    End="23.5,51" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4772,11 +4892,24 @@ order by Gross_Sales desc</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\BooksDimensionsContainer\BooksDimPublishers">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\BooksDimensionsContainer\BooksDimPublishers\OLE DB Destination"
@@ -4804,7 +4937,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4840,7 +4975,7 @@ order by Gross_Sales desc</property>
     design-time-name="Package\BooksDimensionsContainer\BooksDimPublishingYear">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\BooksDimensionsContainer\BooksDimPublishingYear\RemoveDuplicates"
@@ -4884,7 +5019,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4918,7 +5055,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5008,11 +5147,7 @@ order by Gross_Sales desc</property>
     design-time-name="Package\DimBooksStagingData">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\DimBooksStagingData\OLE DB Source"
-          TopLeft="413,38" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\DimBooksStagingData\OLE DB Destination"
@@ -5021,6 +5156,10 @@ order by Gross_Sales desc</property>
           Size="161,42"
           Id="Package\DimBooksStagingData\Data Conversion"
           TopLeft="272,161" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\DimBooksStagingData\OLE DB Source"
+          TopLeft="413,38" />
         <EdgeLayout
           Id="Package\DimBooksStagingData.Paths[OLE DB Source Output]"
           TopLeft="491.5,80">
@@ -5052,7 +5191,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5086,7 +5227,9 @@ order by Gross_Sales desc</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5373,19 +5516,6 @@ order by Gross_Sales desc</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Loading Books File\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\BooksDimensionsContainer\BooksDimLanguages\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
